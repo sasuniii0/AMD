@@ -1,13 +1,55 @@
 import { useState } from "react";
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View ,Image} from "react-native";
 import "../global.css"
+import { Link } from "expo-router";
 
 const Index = () => {
     const [data, setData] = useState("");
 
     return(
         <View style={styles.container}>
-            <Text style={styles.text}>My-First-App</Text>
+            <View className="flex-row space-x-4 mb-8 mt-12 justify-around">
+                <Link href="/home">
+                    <Image
+                    source={{ uri: 'https://img.icons8.com/sf-black-filled/64/home.png' }}
+                    className="w-12 h-12"
+                    />
+                </Link>
+
+                <Link href="/test/sample">
+                    <Image
+                    source={{ uri: 'https://img.icons8.com/ios-filled/50/test.png' }}
+                    className="w-12 h-12"
+                    />
+                </Link>
+
+                <Link href="/test/index">
+                    <Image
+                    source={{ uri: 'https://img.icons8.com/ios/50/snapchat--v1.png' }}
+                    className="w-12 h-12"
+                    />
+                </Link>
+
+                <Link href="/(auth)/login">
+                    <Image
+                    source={{ uri: 'https://img.icons8.com/ios-glyphs/30/enter-2.png' }}
+                    className="w-12 h-12"
+                    />
+                </Link>
+
+            
+
+            {/* <Link href="/test/id">
+                <Image
+                source={{ uri: 'https://img.icons8.com/ios-filled/50/facetime.png' }}
+                className="w-12 h-12"
+                />
+            </Link> */}
+        </View>
+
+                <View className="mb-8">
+                <Text style={styles.text}>My-First-App</Text>
+                </View>
             <Image source={{uri : 'https://img.icons8.com/material/48/--tinder.png'}} style={styles.image}/>
 
             <TextInput 
@@ -23,7 +65,7 @@ const Index = () => {
             </TouchableOpacity>
             {/* <ScrollView/> */}
 
-            <Text className="text-xl font-semibold text-gray-900">All rights received</Text>
+            <Text className="text-xl font-semibold text-gray-900 mt-4">All rights received</Text>
         </View>
     )
 }
